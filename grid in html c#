@@ -1,0 +1,15 @@
+<div class="grid-container">
+    @foreach (var item in Model.Recipes)
+    {
+
+
+        <div class="grid-item">
+            <img src="data:image;base64,@Html.DisplayFor(modelItem => item.RecipeImg)" alt="Alternate Text" style="width: 250px;height: 200px" />
+            <h3>@Html.DisplayFor(modelItem => item.RecipeName)</h3>
+            <a asp-page="./Edit" asp-route-id="@item.RecipeId">Edit</a>
+            <a asp-page="./Details" asp-route-id="@item.RecipeId">Details</a>
+            <a asp-page="./Delete" asp-route-id="@item.RecipeId">Delete</a>
+        </div>
+
+    }
+</div>
